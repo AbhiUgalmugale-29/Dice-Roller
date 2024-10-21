@@ -43,11 +43,16 @@
   <body>
     <div class="container">
       <h1>Dice Roller</h1>
-      <img src="./img/1.png" alt="image" class="dice-img" id="dice-img" />
+      <img src="./img/dice.png" alt="image" class="dice-img" id="dice-img" />
       <button id="rollButton" onclick="rollDice()">Roll Dice</button>
     </div>
 
     <script>
+      function resetDice() {
+        const diceImg = document.getElementById("dice-img");
+        diceImg.src = "./img/dice.png";
+      }
+
       function rollDice() {
         const min = 1;
         const max = 6;
@@ -68,6 +73,8 @@
         } else if (randomNum == 6) {
           diceImg.src = "./img/6.png";
         }
+
+        setTimeout(resetDice, 3000);
       }
     </script>
   </body>
